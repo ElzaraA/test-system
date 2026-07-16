@@ -1,0 +1,126 @@
+.common-dashboard-expertise {
+  margin-top: 24px;
+  background-color: $dark-color-background-secondary;
+  padding: 12px;
+  border-radius: 12px;
+  gap: 12px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 4px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > p {
+      @include body-1;
+      color: $dark-color-text-primary;
+    }
+
+    & > .button {
+      width: 32px;
+      height: 32px;
+
+      &:first-child .svg-icon {
+        transform: rotate(90deg); 
+      }
+
+      &:last-child .svg-icon {
+        transform: rotate(-90deg); 
+      }
+    }
+  }
+
+  &__stat-item {
+    display: grid;
+    grid-template-columns: 1fr 55px;
+    width: 100%;
+    gap: 4px;
+
+    @include desktop {
+      grid-template-columns: 1fr 55px;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      flex: 1 0 auto;
+      padding: 8px 6px;
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+      background-color: $dark-color-background-secondary;
+
+      & > p {
+        @include button-2;
+        color: $dark-color-text-primary;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      padding: 8px 0;
+      border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
+      background-color: $dark-color-background-secondary;
+
+      & > p {
+        @include button-2;
+        color: $dark-color-text-primary;
+      }
+    }
+
+    &--gray &-left {
+      border: 2px solid #414247;
+    }
+
+    &--gray &-right {
+      background-color: #414247;
+    }
+
+    &--green &-left {
+      border: 2px solid #1c8783;
+    }
+
+    &--green &-right {
+      background-color: #1c8783;
+    }
+
+    &--red &-left {
+      border: 2px solid #e04444;
+    }
+
+    &--red &-right {
+      background-color: #e04444;
+    }
+
+    &--blue &-left {
+      border: 2px solid #ff8a00;
+    }
+
+    &--blue &-right {
+      background-color: #ff8a00;
+    }
+
+    &--purple &-left {
+      border: 2px solid #3a3ca7;
+    }
+
+    &--purple &-right {
+      background-color: #3a3ca7;
+    }
+  }
+}
+

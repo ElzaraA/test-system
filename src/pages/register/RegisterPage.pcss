@@ -1,0 +1,41 @@
+.register-page {
+  display: flex;
+  height: 100%;
+
+  & > aside {
+    background: $color-background-brand-violet;
+    width: 640px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 auto;
+
+    & > h2 {
+      @include h3;
+      color: $color-text-primary-inverse;
+    }
+
+    & > div {
+      background: no-repeat center / contain url("@/assets/img/logo_w_text.svg");
+      width: 317px;
+      height: 91px;
+    }
+  }
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > h1 {
+      @include h1;
+      color: $color-text-primary;
+    }
+
+    & > div {
+      width: 620px;
+    }
+  }
+}

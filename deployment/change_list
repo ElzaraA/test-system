@@ -1,0 +1,7 @@
+https://api-test.rut.digital|API_URL
+https://minio-api-dev.rut.digital|MINIO_URL
+https://s3-test.rut.digital|S3_API_URL
+https://vsm-blog-test.rut.digital|FRONTEND_BLOG_URL
+https://vsm-dashboards-test.rut.digital|FRONTEND_DASHBOARDS_URL
+https://vsm-map-test.rut.digital|FRONTEND_MAP_URL
+https://vsm-monitoring-test.rut.digital|FRONTEND_MONITORING_URL

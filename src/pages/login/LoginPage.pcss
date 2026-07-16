@@ -1,0 +1,95 @@
+.login-page {
+  display: flex;
+  height: 100%;
+
+  @include laptop {
+    flex-direction: column;
+  }
+
+  & > aside {
+    background: linear-gradient(121.78deg, #6364C8 9.06%, #3739A4 88.15%);
+    width: 640px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 auto;
+
+    @include desktopHd {
+      width: 500px
+    }
+
+    @include laptop {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+
+    & > h2 {
+      @include h3;
+      color: $color-text-primary-inverse;
+
+      @include laptop {
+        @include subtitle-1;
+      }
+    }
+
+    & > div {
+      flex: 0 0 auto;
+      background: no-repeat center / contain url("@/assets/img/logo_w_text.svg");
+      width: 317px;
+      height: 91px;
+
+      @include laptop {
+        width: 223px;
+        height: 64px;
+      }
+    }
+  }
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1 0 auto;
+    background: $color-background-darkmode;
+
+    & > .login-page__agreement{
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      left: 40px;
+      bottom: 40px;
+
+      & > a.login-page__agreement-link {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+
+      &:visited {
+        color: #fff;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      & > h1 {
+        @include h1;
+        color: $color-text-primary-inverse;
+      }
+    }
+  }
+}

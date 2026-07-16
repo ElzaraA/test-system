@@ -1,0 +1,116 @@
+.button {
+  padding: 0 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+
+  & > .svg-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:focus-visible {
+    outline: 4px solid $color-border-secondary;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &-primary {
+    background: $gradient-violet;
+    color: $color-text-primary-inverse;
+
+    &:hover {
+      background: $color-background-brand-violet-light;
+    }
+
+    &:active {
+      background: $gradient-violet;
+    }
+
+    &:disabled {
+      background: $dark-color-background-secondary-2;
+      color: $dark-color-text-no-active;
+    }
+  }
+
+  &-gray {
+    background: $dark-color-background-headlines;
+    color: $dark-color-text-primary;
+
+    &:hover {
+      background: $dark-color-background-light;
+    }
+
+    &:active {
+      background: $dark-color-background-headlines;
+    }
+
+    &:disabled {
+      background: $dark-color-background-secondary-2;
+      color: $dark-color-text-no-active;
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    color: $dark-color-text-primary;
+    border: 2px solid $dark-color-icon-primary;
+
+    &:hover {
+      color: $color-text-link;
+      background: $dark-color-icon-primary;
+    }
+
+    &:active {
+      background: transparent;
+      color: $color-text-link-darkmode;
+      border-color: $color-text-secondary-darkmode;
+    }
+
+    &:disabled {
+      border-color: $dark-color-background-secondary-2;
+      color: $dark-color-text-no-active;
+    }
+  }
+
+  &-text {
+    background: transparent;
+    color: $dark-color-text-primary;
+
+    &:hover {
+      color: $color-text-link;
+    }
+
+    &:active {
+      color: $dark-color-text-primary;
+    }
+
+    &:disabled {
+      color: $dark-color-text-no-active;
+    }
+  }
+
+  &-xl {
+    @include button-1;
+    height: 88px;
+  }
+
+  &-l {
+    @include button-1;
+    height: 60px;
+  }
+
+  &-m {
+    @include button-1;
+    height: 48px;
+  }
+
+  &-s {
+    @include button-2;
+    height: 40px;
+  }
+}

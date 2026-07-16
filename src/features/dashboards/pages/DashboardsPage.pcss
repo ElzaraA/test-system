@@ -1,0 +1,106 @@
+.dashboards-page {
+  height: 100%;
+  background-color: $dark-color-background-primary;
+  position: relative;
+
+  &__sidebar {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  // TODO: delete
+  @keyframes appearAfterDelay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 5;
+    opacity: 0;
+    animation: appearAfterDelay 0.5s ease-in-out 0.5s both;
+    z-index: 100;
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+
+    padding-left: $navbar-height;
+
+    &-wrapper {
+      flex: 1 1 auto;
+      width: 100%;
+      padding: 0 7.05rem;
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      @include desktop {
+        padding: 0 64px;
+      }
+
+      /* СКП: чуть уже поля у края вьюпорта (корень страницы без обёртки content-section). */
+      &:has(.scp-section) {
+        padding: 0 6rem;
+
+        @include desktop {
+          padding: 0 56px;
+        }
+      }
+    }
+
+    &-section {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      user-select: none;
+      padding: 40px 0;
+      display: flex;
+      max-width: min(1760px, calc(100%));
+      flex-direction: column;
+      gap: 40px;
+      height: 100%;
+      position: relative;
+      margin: auto;
+
+      @media (max-height: 1000px) {
+        gap: 24px;
+        padding: 32px 0;
+      }
+    }
+  }
+
+  .dashboards-page__legend {
+    padding: 24px 0;
+
+    & > li {
+      gap: 0;
+    }
+
+    & > li > .dashboard-legend__particle {
+      flex: 0 0 $navbar-height;
+      display: flex;
+      justify-content: center;
+    }
+
+    & > li > span {
+      text-wrap: nowrap;
+    }
+  }
+}

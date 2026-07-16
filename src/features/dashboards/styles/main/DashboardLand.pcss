@@ -1,0 +1,101 @@
+.land-dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+
+  &__header {
+    background-color: $dark-color-background-headlines;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    position: relative;
+    border-radius: 8px;
+    margin-top: 8px;
+
+    & > p {
+      @include body-2;
+      color: $dark-color-text-primary;
+    }
+  }
+
+  &__sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 8px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-color-background-secondary;
+    border-radius: 8px;
+    padding: 8px;
+    gap: 12px;
+  }
+
+  &__section-title {
+    color: $color-text-secondary-darkmode;
+    @include body-2;
+    text-align: left;
+  }
+
+  &__progress-bar {
+    display: flex;
+    width: 100%;
+    height: 24px;
+  }
+
+  &__progress-completed {
+    background-color: $dark-color-background-accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+  }
+
+  &__progress-plan {
+    background-color: $dark-color-background-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px; 
+  }
+
+  &__progress-value {
+    color: #FFFFFF;
+    @include body-3;
+    white-space: nowrap;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 2px;
+    background-color: $dark-color-background-headlines;
+    border: none;
+    margin: 12px 0;
+  }
+
+  &__legend {
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__no-data {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    
+    p {
+      color: $color-text-secondary-darkmode;
+      @include body-2;
+    }
+  }
+}

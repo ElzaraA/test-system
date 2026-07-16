@@ -1,0 +1,89 @@
+.main-expertise-dashboard {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  padding-top: 12px;
+  height: 100%;
+  width: 100%;
+
+  &__table {
+    display: grid;
+    grid-template-columns: 4ch 8ch 0.85fr 0.85fr 0.85fr 1fr;
+    gap: 8px;
+  }
+
+  &__table-head {
+    @include button-2;
+    color: $dark-color-text-primary;
+    background-color: $dark-color-background-headlines;
+    padding: 12px 8px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__table-cell {
+    @include body-2;
+    color: $dark-color-text-secondary;
+    background-color: $dark-color-background-secondary;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--green {
+      padding: 8px;
+      border: 2px solid $color-icon-success;
+    }
+
+    &--red {
+      padding: 8px;
+      border: 2px solid $color-icon-error;
+    }
+
+    &--purple {
+      padding: 8px;
+      border: 2px solid #3a3ca7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    &-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: var(--fill-percent, 0%);
+      background-color: #3a3ca7;
+      pointer-events: none;
+    }
+
+    &-value {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-status {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background-color: $color-icon-success;
+      margin-right: 8px;
+    }
+
+    &--orange {
+      padding: 8px;
+      border: 2px solid #ff9800;
+    }
+  }
+
+  &__legend {
+    margin-top: 12px;
+    gap: 32px;
+  }
+}

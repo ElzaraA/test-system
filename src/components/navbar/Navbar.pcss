@@ -1,0 +1,93 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  background-color: $color-background-darkmode;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-shadow: 7px 4px 23px 0px #0000000d;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  height: $navbar-height;
+  user-select: none;
+
+  @include laptop {
+    height: $navbar-height-laptop;
+  }
+
+  @include tablets {
+    height: $navbar-height-tablet;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__logo {
+    width: $navbar-height;
+    height: $navbar-height;
+    background: no-repeat center / 55% 55% url("@/assets/img/logo.png");
+
+    @include laptop {
+      height: $navbar-height-laptop;
+      width: $navbar-height-laptop;
+    }
+
+    @include tablets {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+
+    & > a {
+      @include button-1;
+      padding: 8px 0;
+      margin: 0 16px;
+      display: flex;
+      align-items: center;
+      text-wrap: nowrap;
+      text-decoration: none;
+      color: $color-text-secondary-darkmode;
+      border-bottom: 2px solid transparent;
+      border-top: 2px solid transparent;
+      transition: 0.07s;
+
+      &:visited {
+        color: $color-text-secondary-darkmode;
+      }
+    }
+
+    &_active > a {
+      color: $color-text-link-darkmode;
+      border-bottom: 2px solid $color-text-link-darkmode;
+      pointer-events: none;
+    }
+
+    & > a:hover {
+      border-bottom: 2px solid $color-text-link-darkmode;
+    }
+
+    &_disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  &__tools {
+    display: flex;
+  }
+}
+
+.navbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

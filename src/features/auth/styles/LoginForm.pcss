@@ -1,0 +1,27 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 650px;
+    
+  &__inputs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & > p {
+      @include body-3;
+      color: $color-text-error;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & > p {
+      color: $color-text-secondary-darkmode;
+    }
+  }
+}

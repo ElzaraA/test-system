@@ -1,0 +1,135 @@
+.main-questions-dashboard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+  position: relative;
+
+  &__admin-buttons {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    background-color: $dark-color-background-primary;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    & > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $dark-color-background-headlines;
+      }
+
+      & > .svg-icon {
+        padding: 4px;
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  &__table {
+    display: grid;
+    grid-template-columns: 1fr 10ch 10ch 10ch;
+    gap: 8px;
+
+    &-head {
+      @include body-2;
+      color: $dark-color-text-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $dark-color-background-secondary;
+      border-radius: 8px;
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    &-item {
+      @include body-2;
+      color: $dark-color-text-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(31, 36, 42, 1);
+      border-radius: 8px;
+      text-align: center;
+      padding: 8px 0;
+      transition: 0.1s;
+
+      &:disabled {
+        cursor: default;
+        pointer-events: none;
+      }
+
+      &--title {
+        justify-content: start;
+        padding-left: 16px;
+        gap: 16px;
+
+        & > p {
+          display: flex;
+          align-items: center;
+          min-height: 26px;
+          text-align: left;
+        }
+      }
+
+      &--number {
+        background-color: $dark-color-background-headlines;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+      }
+
+      &--qty {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      &--fill-red {
+        color: $dark-color-text-primary;
+        background-color: rgba(165, 48, 48, 1);
+      }
+
+      &--outline-red {
+        padding: 4px 0;
+        color: rgba(165, 48, 48, 1);
+        border: 2px solid rgba(165, 48, 48, 1);
+      }
+
+      &--fill-yellow {
+        color: $dark-color-text-primary;
+        background-color: rgba(255, 138, 0, 1);
+      }
+
+      &--outline-yellow {
+        padding: 4px 0;
+        color: rgba(255, 138, 0, 1);
+        border: 2px solid rgba(255, 138, 0, 1);
+      }
+
+      &--fill-blue {
+        color: $dark-color-text-primary;
+        background-color: rgba(224, 68, 68, 1);
+      }
+
+      &--outline-blue {
+        padding: 4px 0;
+        color: rgba(224, 68, 68, 1);
+        border: 2px solid rgba(224, 68, 68, 1);
+      }
+    }
+  }
+}

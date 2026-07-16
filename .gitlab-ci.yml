@@ -1,0 +1,6 @@
+include:
+  - project: "highspeedrailway/devops/pipelines"
+    file: "docker-npm/docker-npm.yml"
+
+variables:
+  UNIQ_PACKAGE: "true"

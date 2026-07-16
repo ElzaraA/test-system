@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: registry.rut.digital/highspeedrailway/frontend-main:master
+    container_name: frontend-main
+    ports:
+      - "88:80"
+    volumes:
+      - ./script.sh:/script.sh
+      - ./change_list:/change_list:ro
+    entrypoint: ["/script.sh"]
+    env_file:
+      - .env
+    networks:
+      - external-network
+    restart: unless-stopped
+
+
+networks:
+  external-network:
+    external: true

@@ -1,0 +1,200 @@
+.main-building-dashboard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+
+  &__header {
+    background-color: $dark-color-background-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    position: relative;
+    border-radius: 8px;
+
+    & > p {
+      @include body-2;
+      color: $dark-color-text-primary;
+    }
+  }
+
+  &__header-button {
+    background-color: $dark-color-background-headlines;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: 0.1s;
+
+    &:disabled {
+      opacity: 0;
+    }
+
+    & > .svg-icon {
+      height: 50%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: auto 0.8fr 6ch 1fr 7ch;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 12px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    &-icon {
+      background-color: $dark-color-background-headlines;
+      position: relative;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+
+      & > .svg-icon {
+        height: 50%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      gap: 8px;
+
+      &-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        text-decoration: none;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        & > small {
+          @include caption-2;
+          color: $dark-color-text-secondary;
+        }
+      }
+
+      & > p {
+        @include body-2;
+        color: $dark-color-text-secondary;
+      }
+    }
+
+    &-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      & > p {
+        @include body-2;
+        color: $dark-color-text-secondary;
+        margin: 0;
+      }
+    }
+
+    &-link-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    &-percent,
+    &-total {
+      @include button-2;
+      color: $dark-color-text-secondary;
+    }
+
+    &-total {
+      text-align: left;
+    }
+
+    &-bar {
+      width: 100%;
+      background-color: $dark-color-background-light;
+      height: 24px;
+      position: relative;
+
+      & > p {
+        @include button-2;
+        color: $dark-color-text-primary;
+        position: absolute;
+        top: 50%;
+        left: 8px;
+        transform: translateY(-50%);
+      }
+
+      &--filled {
+        background-color: $dark-color-background-accent;
+        height: 100%;
+        transition: 0.2s;
+      }
+
+      &--green {
+        background-color: $dark-color-background-accent;
+        height: 100%;
+        transition: 0.2s;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+
+        & > p {
+          @include button-2;
+          color: $dark-color-text-primary;
+          position: absolute;
+          top: 50%;
+          left: 4px;
+          transform: translateY(-50%);
+        }
+      }
+
+      &--red {
+        background-color: $color-text-error;
+        height: 100%;
+        transition: 0.2s;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+
+        & > p {
+          @include button-2;
+          color: $dark-color-text-primary;
+          position: absolute;
+          top: 50%;
+          left: 4px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

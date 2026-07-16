@@ -1,0 +1,26 @@
+.logout-button {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &:hover &__label {
+    color: $color-text-link-darkmode;
+  }
+
+  & > svg {
+    width: 24px;
+    height: 24px;
+
+    @include laptop {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__label {
+    @include button-1;
+    color: $color-text-secondary-darkmode;
+    transition: color 0.15s;
+  }
+}

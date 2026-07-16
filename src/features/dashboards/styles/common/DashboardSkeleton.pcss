@@ -1,0 +1,78 @@
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.section-skeleton {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  width: 100%;
+
+  @media (max-height: 1000px) {
+    gap: 20px;
+    padding: 32px 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+  }
+
+  &__line {
+    border-radius: 4px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+
+    /* общие модификаторы, встречающиеся во всех/многих скелетах */
+
+    &--admin {
+      height: 32px;
+      width: 32px;
+      border-radius: 8px;
+    }
+
+    /* пример частичного выноса: общая “геометрия”, а ширину можно переопределить в компоненте */
+    &--date {
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    &--tab {
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    &--table-header {
+      height: 24px;
+      border-radius: 4px;
+    }
+
+    &--table-row,
+    &--table-cell {
+      height: 16px;
+      border-radius: 4px;
+    }
+  }
+}

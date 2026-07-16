@@ -1,0 +1,112 @@
+.dashboards-main-section {
+  &__dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    & > div:last-of-type {
+      flex: 1 1 auto;
+    }
+
+    &--link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      background-color: #262c36;
+      width: 100%;
+      border-radius: 8px;
+
+      & > h4 {
+        @include subtitle-3;
+        padding: 10px 0;
+        color: #fff;
+        align-items: center;
+
+        @include desktopHd {
+          @include body-1;
+        }
+      }
+    }
+  }
+
+  &__title-bar {
+    @include subtitle-3;
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    background-color: #262c36;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @include desktopHd {
+      @include body-1;
+    }
+
+    & > h4 {
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 10px 4px;
+      color: #fff;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 0;
+    }
+  }
+
+  &__title-bar-side {
+    flex: 0 0 auto;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:empty {
+      width: 12px;
+    }
+  }
+
+  &__title-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 38px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    & .svg-icon,
+    & .lib-icon {
+      width: 22px;
+      height: 22px;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__icon--link {
+    width: 24px;
+    height: 24px;
+
+    @include desktop {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

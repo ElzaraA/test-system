@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  accent-color: rgba(69, 71, 187, 0.75);
+}
+
+*:focus-visible {
+  outline: 2px solid rgba(69, 71, 187, 0.75);
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  background-color: $dark-color-background-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a,
+a:visited {
+  color: $color-text-link;
+}
+
+html {
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+
+  @include desktopHd {
+    font-size: 0.85em;
+  }
+
+  @include desktop {
+    font-size: 0.7em;
+  }
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+#app {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.content-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.content-wrapper_with-navbar {
+  padding-top: $navbar-height;
+
+  @include laptop {
+    padding-top: $navbar-height-laptop;
+  }
+
+  @include tablets {
+    padding-top: $navbar-height-tablet;
+  }
+}
+
+.navbar__label_blocked {
+  cursor: default;
+  pointer-events: none;
+}

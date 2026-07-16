@@ -1,0 +1,72 @@
+.checkbox {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+
+  & > p {
+    @include button-1;
+    color: $color-text-link-darkmode;
+  }
+
+  & > input {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+
+  & > div {
+    background: transparent;
+    border: 2px solid $color-border-light;
+    border-radius: 4px;
+    min-width: 24px;
+    min-height: 24px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 20ms;
+    transition: 0.07s;
+
+    &:hover {
+      border-color: $color-border-primary;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      display: none;
+    }
+  }
+
+  &:has(input:focus-visible) > div {
+    outline: 2px solid $color-border-secondary;
+  }
+
+  &_active {
+    & > div {
+      background-color: $color-background-brand-violet;
+      border-color: $color-border-primary;
+
+      & > svg {
+        display: block;
+      }
+    }
+  }
+
+  &_disabled {
+    pointer-events: none;
+
+    & > div {
+      background-color: $color-background-primary;
+      border-color: $color-border-extra-light;
+
+      & > svg {
+        display: block;
+      }
+    }
+  }
+}

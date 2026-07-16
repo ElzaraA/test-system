@@ -1,0 +1,125 @@
+.dashboards-main-section {
+  max-height: fit-content;
+
+  &__header {
+    & > h2 {
+      @include h2;
+      color: #fff;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 40px;
+    padding-bottom: 24px;
+    max-height: fit-content;
+
+    @include desktopHd {
+      gap: 24px;
+    }
+
+    @media (max-height: 1000px) {
+      gap: 24px;
+      max-height: fit-content;
+    }
+  }
+
+  &__right {
+    grid-column: span 6;
+    gap: 20px;
+
+    @include desktopHd {
+      gap: 20px;
+    }
+  }
+
+  &__top {
+    grid-column: span 6;
+    gap: 20px;
+
+    @include desktopHd {
+      gap: 20px;
+    }
+  }
+
+  &__bottom-dashboard {
+    gap: 16px;
+    grid-column: span 6;
+    max-height: 600px;
+  }
+
+  &__small-dashboard {
+    grid-column: span 2;
+    position: relative;
+    gap: 20px;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      max-height: fit-content;
+    }
+  }
+
+  &__train-dashboard {
+    grid-column: span 2;
+    position: relative;
+    gap: 20px;
+
+    @include desktop {
+      display: none;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-height: fit-content;
+      gap: 20px;
+      align-items: center;
+
+      & p {
+        @include body-2;
+        color: $dark-color-text-primary;
+      }
+    }
+  }
+
+  &__land-dashboard {
+    grid-column: span 2;
+    position: relative;
+    gap: 20px;
+
+    @include desktop {
+      grid-column: span 3;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-height: fit-content;
+      gap: 20px;
+
+      & p {
+        @include body-2;
+        color: $dark-color-text-primary;
+      }
+    }
+  }
+
+  &__task-dashboard {
+    grid-column: span 2;
+    position: relative;
+    gap: 20px;
+
+    @include desktop {
+      grid-column: span 3;
+    }
+  }
+}

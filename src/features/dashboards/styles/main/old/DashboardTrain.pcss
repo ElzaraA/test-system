@@ -1,0 +1,39 @@
+.train-dashboard {
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 36px;
+  
+    &__gauge-wrapper {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      position: relative;
+      aspect-ratio: 1 / 1;
+      min-width: 70%;
+      max-width: 70%;
+    }
+  
+    &__gauge {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      z-index: 5;
+      background-color: $dark-color-background-primary;
+    }
+  
+    &__legend {
+      width: 100%;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  
+    &__text {
+      width: 100%;
+      color: #CFCFCF;
+      @include body-1;
+    }
+  }
+  
