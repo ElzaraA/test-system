@@ -1,11 +1,16 @@
+тут убери все что связано с бургер меню и сайдбаром
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import { VerticalMenu, VerticalMenuItem, useAuth } from "@/lib";
 import { Legend, CamerasModal } from "@/features/dashboards";
 import { tabKeyToRoute } from "@/features/dashboards/model/useDashboardsNavigation";
 
 const sidebarTab = ref(tabKeyToRoute.status);
 const auth = useAuth();
+
+// Состояние бургер-меню
+const isMenuOpen = ref(false);
+const isMobile = ref(false);
 
 const canAccessDashboards = computed(() => auth.canAccessMethod("mediaAgenda"));
 
@@ -16,11 +21,67 @@ const legend = [
   { color: "#FFF", text: "План" },
   { color: "#497FAE", text: "Завершено" },
 ];
+
+// Проверяю ширину экрана
+function checkMobile() {
+  if (!isMobile.value) {
+    isMenuOpen.value = false; 
+  }
+}
+
+// Закрываем меню при клике вне его
+function closeMenuOnClickOutside(event: MouseEvent) {
+  const target = event.target as HTMLElement;
+  if (
+    isMenuOpen.value &&
+    !target.closest(".dashboards-page__sidebar") &&
+    !target.closest(".dashboards-page__burger")
+  ) {
+    isMenuOpen.value = false;
+  }
+}
+
+onMounted(() => {
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+  document.addEventListener("click", closeMenuOnClickOutside);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkMobile);
+  document.removeEventListener("click", closeMenuOnClickOutside);
+});
+
+function toggleMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
 </script>
 
 <template>
   <div class="dashboards-page">
-    <div class="dashboards-page__sidebar">
+    <!--Бургер-кнопка -->
+    <button
+      class="dashboards-page__burger"
+      :class="{ 'dashboards-page__burger--active': isMenuOpen }"
+      aria-label="Открыть меню"
+      @click="toggleMenu"
+    >
+      <span class="dashboards-page__burger-line" />
+      <span class="dashboards-page__burger-line" />
+      <span class="dashboards-page__burger-line" />
+    </button>
+
+    <!-- Затемнение фона при открытом меню -->
+    <div
+      v-if="isMenuOpen"
+      class="dashboards-page__overlay"
+      @click="isMenuOpen = false"
+    />
+
+    <div
+      class="dashboards-page__sidebar"
+      :class="{ 'dashboards-page__sidebar--open': isMenuOpen }"
+    >
       <VerticalMenu v-model:tabkey="sidebarTab" class="dashboards-page__menu" :clearable="false">
         <VerticalMenuItem :tabkey="tabKeyToRoute.status" icon="analytics" label="Основное" />
         <VerticalMenuItem :tabkey="tabKeyToRoute.expertise" icon="expertise" label="Экспертиза" />
