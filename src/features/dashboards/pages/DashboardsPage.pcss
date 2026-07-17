@@ -39,8 +39,7 @@
     display: flex;
     justify-content: center;
     padding-bottom: 24px;
-
-    padding-left: $navbar-height;
+    padding-left: 0 !important; /* Убрали отступ под сайдбар */
 
     &-wrapper {
       flex: 1 1 auto;
@@ -54,7 +53,7 @@
         padding: 0 64px;
       }
 
-      /* СКП: чуть уже поля у края вьюпорта (корень страницы без обёртки content-section). */
+      
       &:has(.scp-section) {
         padding: 0 6rem;
 
@@ -104,3 +103,62 @@
     }
   }
 }
+
+/* 1. Ноутбуки (до 992px) */
+@include laptop() {
+  .dashboards-page__content-wrapper {
+    padding: 0 48px;
+  }
+}
+
+/* 2. Планшеты (до 768px) */
+@include tablets() {
+  .dashboards-page__content-wrapper {
+    padding: 0 24px;
+  }
+
+  .dashboards-page__content-section {
+    gap: 24px;
+    padding: 24px 0;
+  }
+  
+  .dashboards-main-section__header h2 {
+    margin-left: 50px;
+  }
+}
+
+/* 3. Телефоны (до 480px) */
+@include phones() {
+  .dashboards-page__content-wrapper {
+    padding: 0 16px;
+  }
+
+  .dashboards-page__content-section {
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .dashboards-main-section__header h2 {
+    font-size: 1.5rem !important;
+    margin-left: 50px;
+  }
+}
+
+/* 4. Очень маленькие экраны (до 280px) */
+@include phones-tight() {
+  .dashboards-page__content-wrapper {
+    padding: 0 12px;
+  }
+
+  .dashboards-page__content-section {
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .dashboards-main-section__header h2 {
+    font-size: 1.25rem !important;
+    margin-left: 50px;
+  }
+}
+
+
